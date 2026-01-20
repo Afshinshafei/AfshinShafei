@@ -1,122 +1,109 @@
-# Afshin Shafei - Personal Website
+# Afshin Shafei - Retro Arcade Portfolio
 
-A retro gaming-styled personal portfolio website built with Next.js, featuring an Atari-inspired design with modern responsiveness.
+A retro-style personal website with 80s arcade aesthetics, built with React and Vite. Features neon colors, grid backgrounds, scanline effects, and pixel fonts for a nostalgic gaming experience.
 
 ## Features
 
-- **Retro Gaming Aesthetic**: Atari-style fonts (Press Start 2P, VT323), CRT effects, and pixel-perfect borders
-- **Fully Static**: Exports to static HTML for GitHub Pages deployment
-- **Responsive Design**: Mobile-friendly layout that works on all devices
-- **Type-Safe**: Built with TypeScript for better code quality
-- **Modern Stack**: Next.js 14 with App Router and Tailwind CSS
+- 🎮 **80s Arcade Aesthetic**: Neon colors, CRT scanlines, and grid backgrounds
+- ✨ **Smooth Animations**: Glitch effects, neon glows, and transitions
+- 📱 **Responsive Design**: Works on desktop, tablet, and mobile
+- ⚡ **Fast Performance**: Built with Vite for lightning-fast development
+- 🎨 **Modern React**: Component-based architecture for easy updates
 
-## Project Structure
+## Tech Stack
 
-```
-.
-├── app/                    # Next.js app directory
-│   ├── page.tsx           # Home page
-│   ├── education/         # Education page
-│   ├── experience/        # Experience page
-│   ├── research/          # Research page
-│   ├── publications/      # Publications & Conferences page
-│   ├── skills/            # Skills page
-│   ├── layout.tsx         # Root layout
-│   └── globals.css        # Global styles
-├── components/            # Reusable React components
-│   ├── Navigation.tsx     # Navigation bar
-│   ├── RetroCard.tsx      # Card component
-│   ├── SectionTitle.tsx   # Section title component
-│   └── PixelDivider.tsx   # Divider component
-├── data/                  # Data files
-│   └── resume.ts          # CV/Resume data
-├── public/                # Static files
-└── next.config.js         # Next.js configuration
-```
+- **React 18** - UI framework
+- **Vite 5** - Build tool and dev server
+- **CSS3** - Custom styling with animations
+- **Google Fonts** - Press Start 2P & VT323 retro fonts
 
-## Getting Started
+## Local Development
 
 ### Prerequisites
 
-- Node.js 18.0 or later
-- npm, yarn, or pnpm
+- Node.js (version 16 or higher)
+- npm or yarn
 
 ### Installation
 
 1. Clone the repository:
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/YOUR_USERNAME/personal_webiste.git
 cd personal_webiste
 ```
 
 2. Install dependencies:
 ```bash
 npm install
-# or
-yarn install
-# or
-pnpm install
 ```
 
-3. Run the development server:
+3. Start the development server:
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
 ```
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
+4. Open your browser and visit `http://localhost:5173`
 
 ## Building for Production
 
-### Build Static Site
-
-To build the site for production:
+To create a production build:
 
 ```bash
 npm run build
 ```
 
-This will create an `out/` folder with all static files ready for deployment.
+The built files will be in the `dist` folder.
 
-## Deployment to GitHub Pages
+To preview the production build locally:
 
-### Method 1: Manual Deployment
-
-1. Build the static site:
 ```bash
-npm run build
+npm run preview
 ```
 
-2. Push the repository to GitHub:
+## Deploying to GitHub Pages
+
+### Method 1: Using gh-pages package (Recommended)
+
+1. **Update the repository name** in `vite.config.js`:
+   - Change the `base` value to match your GitHub repository name
+   - Example: If your repo is `https://github.com/username/my-portfolio`, use `base: '/my-portfolio/'`
+
+2. **Install dependencies** (if not already done):
 ```bash
-git add .
-git commit -m "Initial commit"
-git branch -M main
-git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO.git
-git push -u origin main
+npm install
 ```
 
-3. Push the `out/` folder to a `gh-pages` branch:
+3. **Deploy to GitHub Pages**:
 ```bash
-cd out
-git init
-git add .
-git commit -m "Deploy to GitHub Pages"
-git branch -M gh-pages
-git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO.git
-git push -f origin gh-pages
+npm run deploy
 ```
 
-4. Enable GitHub Pages:
-   - Go to your repository settings
-   - Navigate to "Pages" section
-   - Select `gh-pages` branch as the source
+This will build your site and push it to the `gh-pages` branch.
+
+4. **Enable GitHub Pages**:
+   - Go to your repository on GitHub
+   - Navigate to Settings > Pages
+   - Under "Source", select the `gh-pages` branch
    - Click Save
+   - Your site will be live at `https://YOUR_USERNAME.github.io/personal_webiste/`
 
-### Method 2: Using GitHub Actions (Automated)
+### Method 2: Manual Deployment
+
+1. **Build the project**:
+```bash
+npm run build
+```
+
+2. **Push the dist folder** to GitHub:
+```bash
+git add dist -f
+git commit -m "Deploy to GitHub Pages"
+git subtree push --prefix dist origin gh-pages
+```
+
+3. **Enable GitHub Pages** (same as Method 1, step 4)
+
+### Method 3: GitHub Actions (Automated)
 
 Create `.github/workflows/deploy.yml`:
 
@@ -125,23 +112,21 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [main]
+    branches: [ main ]
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        
+      - uses: actions/checkout@v3
+      
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v3
         with:
           node-version: '18'
           
       - name: Install dependencies
-        run: npm ci
+        run: npm install
         
       - name: Build
         run: npm run build
@@ -150,104 +135,113 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./out
+          publish_dir: ./dist
 ```
 
-Then just push to main branch and it will auto-deploy!
+Then enable GitHub Pages from the `gh-pages` branch as described above.
 
-### Configuration for GitHub Pages
+## Project Structure
 
-#### For User/Organization Site (username.github.io)
-
-If deploying to `username.github.io`, no changes needed to `next.config.js`.
-
-#### For Project Site (username.github.io/repo-name)
-
-If deploying to a repository like `username.github.io/personal-website`, update `next.config.js`:
-
-```javascript
-const nextConfig = {
-  output: 'export',
-  basePath: '/personal-website', // Replace with your repo name
-  images: {
-    unoptimized: true,
-  },
-}
 ```
-
-### Custom Domain
-
-To use a custom domain (like afshinshafei.com):
-
-1. Create a `CNAME` file in the `public/` folder with your domain:
+personal_webiste/
+├── src/
+│   ├── components/
+│   │   ├── Header.jsx          # Hero section with name and title
+│   │   ├── About.jsx            # Summary and bio
+│   │   ├── Education.jsx        # Educational timeline
+│   │   ├── Experience.jsx       # Work experience
+│   │   ├── Research.jsx         # PhD research details
+│   │   ├── Publications.jsx     # Research publications
+│   │   ├── Conferences.jsx      # Conference presentations
+│   │   ├── Skills.jsx           # Technical and language skills
+│   │   └── Contact.jsx          # Contact info and references
+│   ├── App.jsx                  # Main component
+│   ├── App.css                  # Arcade styling
+│   └── main.jsx                 # Entry point
+├── index.html                   # HTML template
+├── vite.config.js              # Vite configuration
+└── package.json                # Dependencies and scripts
 ```
-afshinshafei.com
-```
-
-2. Configure DNS settings with your domain provider:
-   - Add a CNAME record pointing to `YOUR_USERNAME.github.io`
-   - Or use A records pointing to GitHub's IPs
-
-3. Enable custom domain in GitHub Pages settings
 
 ## Customization
 
-### Update Content
+### Updating Content
 
-Edit `data/resume.ts` to update your personal information, education, experience, publications, etc.
+Edit the component files in `src/components/` to update your information:
+- Personal info: `About.jsx`, `Contact.jsx`
+- Work history: `Experience.jsx`
+- Education: `Education.jsx`
+- Research: `Research.jsx`, `Publications.jsx`, `Conferences.jsx`
+- Skills: `Skills.jsx`
 
-### Change Colors
+### Changing Colors
 
-Modify the retro color scheme in `tailwind.config.ts`:
+Edit CSS variables in `src/App.css`:
 
-```typescript
-colors: {
-  retro: {
-    bg: '#0a0a0a',      // Background
-    surface: '#1a1a1a', // Card background
-    border: '#33ff33',  // Border color
-    green: '#33ff33',   // Primary color
-    amber: '#ffb000',   // Secondary color
-    cyan: '#00ffff',    // Accent color
-    pink: '#ff00ff',    // Additional accent
-    text: '#e0e0e0',    // Text color
-  },
+```css
+:root {
+  --neon-cyan: #00ffff;      /* Primary neon color */
+  --neon-magenta: #ff00ff;   /* Secondary neon color */
+  --neon-yellow: #ffff00;    /* Accent color */
+  --bg-dark: #0a0a1a;        /* Main background */
 }
 ```
 
-### Add New Pages
+### Adding New Sections
 
-1. Create a new folder in `app/` directory
-2. Add a `page.tsx` file in that folder
-3. Update the navigation in `components/Navigation.tsx`
+1. Create a new component in `src/components/`
+2. Import and add it to `src/App.jsx`
+3. Style it using the existing arcade card classes
 
-## Tech Stack
+Example:
+```jsx
+// src/components/Projects.jsx
+function Projects() {
+  return (
+    <section className="section" id="projects">
+      <div className="arcade-card">
+        <h2 className="section-title">
+          <span className="pixel-bracket">[</span> PROJECTS <span className="pixel-bracket">]</span>
+        </h2>
+        <div className="section-content">
+          {/* Your projects here */}
+        </div>
+      </div>
+    </section>
+  )
+}
+```
 
-- **Framework**: Next.js 14
-- **Language**: TypeScript
-- **Styling**: Tailwind CSS
-- **Fonts**: Press Start 2P, VT323 (Google Fonts)
-- **Deployment**: GitHub Pages (Static Export)
+## Troubleshooting
 
-## Browser Support
+### GitHub Pages shows 404
 
-Modern browsers including:
-- Chrome/Edge (latest)
-- Firefox (latest)
-- Safari (latest)
-- Mobile browsers
+- Make sure the `base` path in `vite.config.js` matches your repository name
+- Verify GitHub Pages is enabled in repository settings
+- Check that the `gh-pages` branch exists and has the built files
+
+### Styles not loading after deployment
+
+- Clear your browser cache
+- Check that the `base` path in `vite.config.js` is correct
+- Verify all assets are being referenced with relative paths
+
+### Fonts not loading
+
+- Check your internet connection (fonts load from Google Fonts CDN)
+- Verify the font links in `index.html` are correct
 
 ## License
 
-This project is open source and available for personal use.
+This project is open source and available under the MIT License.
 
 ## Contact
 
 Afshin Shafei
 - Email: afshin.shafei@gmail.com
 - LinkedIn: [linkedin.com/in/afshin-shafei-ph-d-a92425117](https://www.linkedin.com/in/afshin-shafei-ph-d-a92425117)
-- Website: [afshinshafei.com](https://afshinshafei.com)
+- Website: [afshinshafei.com](https://afshinshafei.com/)
 
 ---
 
-Built with retro vibes and modern tech! 🕹️
+Made with ❤️ and retro vibes
