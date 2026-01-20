@@ -18,6 +18,7 @@ function App() {
       <Header />
       
       <main className="main-content">
+        <Contact />
         <About />
         <Experience />
         <Education />
@@ -25,7 +26,6 @@ function App() {
         <Publications />
         <Conferences />
         <Skills />
-        <Contact />
       </main>
       
       <footer className="footer">
