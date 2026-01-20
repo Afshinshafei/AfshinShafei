@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Header from './components/Header'
 import About from './components/About'
 import Education from './components/Education'
@@ -10,6 +10,8 @@ import Skills from './components/Skills'
 import Contact from './components/Contact'
 
 function App() {
+  const [activeTab, setActiveTab] = useState('about')
+
   return (
     <div className="app">
       <div className="scanlines"></div>
@@ -17,15 +19,50 @@ function App() {
       
       <Header />
       
+      <nav className="tab-navigation">
+        <button 
+          className={`tab-button ${activeTab === 'about' ? 'active' : ''}`}
+          onClick={() => setActiveTab('about')}
+        >
+          About
+        </button>
+        <button 
+          className={`tab-button ${activeTab === 'education' ? 'active' : ''}`}
+          onClick={() => setActiveTab('education')}
+        >
+          Education
+        </button>
+        <button 
+          className={`tab-button ${activeTab === 'experiences' ? 'active' : ''}`}
+          onClick={() => setActiveTab('experiences')}
+        >
+          Experiences
+        </button>
+      </nav>
+      
       <main className="main-content">
-        <Contact />
-        <About />
-        <Experience />
-        <Education />
-        <Research />
-        <Publications />
-        <Conferences />
-        <Skills />
+        {activeTab === 'about' && (
+          <>
+            <About />
+            <Contact />
+          </>
+        )}
+        
+        {activeTab === 'experiences' && (
+          <>
+            <Experience />
+            <Skills />
+          </>
+        )}
+        
+        {activeTab === 'education' && (
+          <>
+            <Education />
+            <Research />
+            <Publications />
+            <Conferences />
+          </>
+        )}
       </main>
       
       <footer className="footer">

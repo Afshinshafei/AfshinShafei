@@ -850,6 +850,85 @@ body {
   }
 }
 
+/* ========== TAB NAVIGATION ========== */
+.tab-navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 30px 20px;
+  background: var(--bg-darker);
+  border-bottom: 3px solid var(--neon-magenta);
+  box-shadow: 0 0 20px rgba(255, 0, 255, 0.3);
+  flex-wrap: wrap;
+}
+
+.tab-button {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1rem;
+  padding: 15px 30px;
+  background: var(--bg-card);
+  border: 3px solid var(--neon-cyan);
+  color: var(--neon-cyan);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-shadow: 0 0 5px var(--neon-cyan);
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.tab-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    transparent,
+    rgba(0, 255, 255, 0.3),
+    transparent);
+  transition: left 0.5s ease;
+}
+
+.tab-button:hover::before {
+  left: 100%;
+}
+
+.tab-button:hover {
+  border-color: var(--neon-yellow);
+  color: var(--neon-yellow);
+  text-shadow: 0 0 10px var(--neon-yellow);
+  box-shadow: 0 0 20px rgba(255, 255, 0, 0.4);
+  transform: translateY(-3px);
+}
+
+.tab-button.active {
+  background: var(--neon-magenta);
+  border-color: var(--neon-magenta);
+  color: var(--bg-dark);
+  text-shadow: none;
+  box-shadow: 
+    0 0 20px var(--neon-magenta),
+    inset 0 0 10px rgba(0, 0, 0, 0.3);
+  transform: translateY(-3px) scale(1.05);
+}
+
+.tab-button.active::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid var(--neon-magenta);
+  filter: drop-shadow(0 0 5px var(--neon-magenta));
+}
+
 /* ========== ANIMATIONS ========== */
 @keyframes fadeIn {
   from {
@@ -880,4 +959,29 @@ html {
 ::-moz-selection {
   background: var(--neon-cyan);
   color: var(--bg-dark);
+}
+
+/* ========== RESPONSIVE TABS ========== */
+@media (max-width: 768px) {
+  .tab-navigation {
+    gap: 10px;
+    padding: 20px 10px;
+  }
+  
+  .tab-button {
+    font-size: 0.8rem;
+    padding: 12px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tab-navigation {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .tab-button {
+    width: 90%;
+    max-width: 300px;
+  }
 }
