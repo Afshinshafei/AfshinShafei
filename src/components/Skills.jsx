@@ -4,8 +4,7 @@ function Skills() {
   const computerSkills = {
     "Software": ["LaTeX", "QGIS", "AQUASIM", "WordPress", "SWMM", "EPANET", "Adobe Perimeter Pro", "Microsoft Office"],
     "Cloud Computing": ["Google Cloud Platform (GCP)", "Google Colab"],
-    "Programming Language": ["Python"],
-    "Operating Systems": ["Linux", "Windows"]
+    "Programming Language": ["Python", "JavaScript", "Swift"]
   }
 
   const languages = [
@@ -17,7 +16,7 @@ function Skills() {
     { language: "Italian", proficiency: "Elementary", details: "Basic" }
   ]
 
-  const extracurricular = ["Web design", "Logo design", "Video editing", "Music mixing"]
+  const extracurricular = ["Web design", "iOS app design", "Web app design", "DJing"]
 
   return (
     <section className="section" id="skills">

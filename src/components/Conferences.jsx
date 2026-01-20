@@ -11,11 +11,6 @@ function Conferences() {
       title: "Integrating HPC, AI, and Big Data for Enhanced Early-Warning Systems in Hydrological Extremes: Insights from Ghana's Tree Crop Sector"
     },
     {
-      name: "AGU2024, Washington DC, USA",
-      title: "Enhancing Early-Warning Systems for Climate Extremes in Developing Countries Using Machine Learning Models and High-Resolution Datasets",
-      note: "(Abstract accepted for oral presentation, Visa denied)"
-    },
-    {
       name: "PhD Days 2023, Matera, Italy",
       title: "Introducing an Enhanced Early-Warning System Focused on Downscaling Models Using Deep Learning Methods"
     },

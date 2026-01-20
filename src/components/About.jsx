@@ -29,13 +29,13 @@ function About() {
           
           <div className="info-grid">
             <div className="info-item">
-              <span className="info-label">Born:</span> March 27, 1991 - Tabriz, Iran
+              <span className="info-label">Born:</span> 1991 - Tabriz, Iran
             </div>
             <div className="info-item">
               <span className="info-label">Nationality:</span> Iranian
             </div>
             <div className="info-item">
-              <span className="info-label">Location:</span> Rome, Latium, Italy
+              <span className="info-label">Location:</span> Rome, Italy
             </div>
           </div>
         </div>
