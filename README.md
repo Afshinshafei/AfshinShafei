@@ -240,7 +240,6 @@ This project is open source and available under the MIT License.
 Afshin Shafei
 - Email: afshin.shafei@gmail.com
 - LinkedIn: [linkedin.com/in/afshin-shafei-ph-d-a92425117](https://www.linkedin.com/in/afshin-shafei-ph-d-a92425117)
-- Website: [afshinshafei.com](https://afshinshafei.com/)
 
 ---
 

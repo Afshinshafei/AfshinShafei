@@ -37,25 +37,12 @@ function Contact() {
               </a>
             </div>
             <div className="contact-item">
-              <span className="contact-label">Mobile:</span>
-              <span className="contact-value">+39-324-742-8571</span>
-            </div>
-            <div className="contact-item">
               <span className="contact-label">LinkedIn:</span>
               <a href="https://www.linkedin.com/in/afshin-shafei-ph-d-a92425117" 
                  target="_blank" 
                  rel="noopener noreferrer" 
                  className="retro-link">
                 linkedin.com/in/afshin-shafei-ph-d-a92425117
-              </a>
-            </div>
-            <div className="contact-item">
-              <span className="contact-label">Website:</span>
-              <a href="https://afshinshafei.com/" 
-                 target="_blank" 
-                 rel="noopener noreferrer" 
-                 className="retro-link">
-                afshinshafei.com
               </a>
             </div>
           </div>
