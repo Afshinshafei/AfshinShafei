@@ -470,8 +470,11 @@ body {
 
 .timeline-year {
   position: absolute;
-  left: -95px;
+  left: -130px;
   top: 20px;
+  width: 80px;
+  text-align: right;
+  padding-right: 10px;
   font-family: 'Press Start 2P', cursive;
   font-size: 0.9rem;
   color: var(--neon-yellow);
