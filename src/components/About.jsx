@@ -26,18 +26,6 @@ function About() {
             With a strong foundation in Python, Cloud Computing (GCP), and Hydrologic Modeling, 
             I am passionate about leveraging technology to solve critical environmental challenges.
           </p>
-          
-          <div className="info-grid">
-            <div className="info-item">
-              <span className="info-label">Born:</span> 1991 - Tabriz, Iran
-            </div>
-            <div className="info-item">
-              <span className="info-label">Nationality:</span> Iranian
-            </div>
-            <div className="info-item">
-              <span className="info-label">Location:</span> Rome, Italy
-            </div>
-          </div>
         </div>
       </div>
     </section>
