@@ -708,6 +708,74 @@ body {
   font-size: 1rem;
 }
 
+/* ========== PROJECTS ========== */
+.project-item {
+  margin-bottom: 35px;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 6px 12px;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.7rem;
+  border-radius: 0;
+  text-shadow: 0 0 5px currentColor;
+  transition: all 0.3s ease;
+}
+
+.status-published {
+  background: var(--neon-green);
+  color: var(--bg-dark);
+  border: 2px solid var(--neon-green);
+  box-shadow: 0 0 10px var(--neon-green);
+}
+
+.status-beta {
+  background: var(--bg-card);
+  color: var(--neon-orange);
+  border: 2px solid var(--neon-orange);
+  box-shadow: 0 0 10px var(--neon-orange);
+}
+
+.app-store-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background: var(--bg-card);
+  border: 2px solid var(--neon-cyan);
+  color: var(--neon-cyan);
+  text-decoration: none;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.8rem;
+  text-shadow: 0 0 5px var(--neon-cyan);
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.app-store-link:hover {
+  background: var(--neon-cyan);
+  color: var(--bg-dark);
+  text-shadow: none;
+  box-shadow: 0 0 20px var(--neon-cyan);
+  transform: translateX(5px);
+}
+
+.project-technologies {
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 2px solid var(--bg-card-lighter);
+}
+
+.tech-tag {
+  border-color: var(--neon-green);
+  color: var(--neon-green);
+  text-shadow: 0 0 5px var(--neon-green);
+}
+
+.tech-tag:hover {
+  background: var(--neon-green);
+  box-shadow: 0 0 15px var(--neon-green);
+}
+
 /* ========== CONTACT ========== */
 .contact-info {
   margin-bottom: 40px;

@@ -3,6 +3,7 @@ import Header from './components/Header'
 import About from './components/About'
 import Education from './components/Education'
 import Experience from './components/Experience'
+import Projects from './components/Projects'
 import Research from './components/Research'
 import Publications from './components/Publications'
 import Conferences from './components/Conferences'
@@ -38,6 +39,12 @@ function App() {
         >
           Experiences
         </button>
+        <button 
+          className={`tab-button ${activeTab === 'hobby-projects' ? 'active' : ''}`}
+          onClick={() => setActiveTab('hobby-projects')}
+        >
+          Hobby Projects
+        </button>
       </nav>
       
       <main className="main-content">
@@ -52,6 +59,12 @@ function App() {
           <>
             <Experience />
             <Skills />
+          </>
+        )}
+        
+        {activeTab === 'hobby-projects' && (
+          <>
+            <Projects />
           </>
         )}
         
