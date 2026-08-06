@@ -79,7 +79,7 @@ function App() {
       </main>
       
       <footer className="footer">
-        <p className="pixel-text">Last updated: January 2026</p>
+        <p className="pixel-text">Last updated: August 2026</p>
         <p className="pixel-text-small">Made with React & retro vibes</p>
       </footer>
     </div>

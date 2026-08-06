@@ -3,10 +3,17 @@ import React from 'react'
 function Experience() {
   const experiences = [
     {
+      title: "Postdoctoral Researcher",
+      organization: "Alfred Wegener Institute, Helmholtz Centre for Polar and Marine Research",
+      location: "Bremerhaven, Germany",
+      period: "August 2026 - Present",
+      description: []
+    },
+    {
       title: "Research Fellow",
       organization: "Sapienza Università di Roma",
       location: "Rome, Latium, Italy",
-      period: "January 2025 - Present",
+      period: "January 2025 - July 2026",
       description: []
     },
     {

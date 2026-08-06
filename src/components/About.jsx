@@ -11,9 +11,10 @@ function About() {
           <p className="bio-text">
             I am an Environmental Engineer and Ph.D. Researcher specialized in developing 
             next-generation Early-Warning Systems for extreme climate conditions. Currently 
-            a Research Fellow at Sapienza Università di Roma, my work focuses on integrating 
-            data-driven approaches, specifically Machine Learning and Deep Learning, to enhance 
-            climate downscaling and flood risk management.
+            a Postdoctoral Researcher at the Alfred Wegener Institute, Helmholtz Centre for 
+            Polar and Marine Research, my work focuses on integrating data-driven approaches, 
+            specifically Machine Learning and Deep Learning, to enhance climate downscaling 
+            and flood risk management.
           </p>
           <p className="bio-text">
             Beyond academia, I serve as a Technical Adviser (AI & Emerging Technologies) for 

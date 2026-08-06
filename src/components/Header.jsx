@@ -16,7 +16,7 @@ function Header() {
           AFSHIN SHAFEI
         </h1>
         <p className="subtitle neon-subtitle">
-          Research Fellow @ Sapienza Università di Roma
+          Postdoctoral Researcher @ Alfred Wegener Institute, Helmholtz Centre for Polar and Marine Research
         </p>
         <p className="subtitle">
           Ph.D. in Environmental and Hydraulic Engineering

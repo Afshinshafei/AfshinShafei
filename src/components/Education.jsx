@@ -3,6 +3,12 @@ import React from 'react'
 function Education() {
   const education = [
     {
+      year: "2026",
+      degree: "Postdoctoral Researcher",
+      institution: "Alfred Wegener Institute, Helmholtz Centre for Polar and Marine Research",
+      location: "Bremerhaven, Germany"
+    },
+    {
       year: "2025",
       degree: "Research Fellow",
       institution: "Sapienza University of Rome",
